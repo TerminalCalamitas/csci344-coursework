@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 200vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  padding: 5px 20px;
+  height: 65px;
+}
+
+ul {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+}
+
+li {
+  border: 1px solid black;
+  list-style: none;
+  padding: 10px 5px;
+}
+
+a {
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
