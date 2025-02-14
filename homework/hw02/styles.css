@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+
+/* .fa-paper-plane {
+  color: #4077a3;  
+} */
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F4F4F4;
+    font-family: Arial, Helvitica;
+}
+
+h1, h2, h3 {
+  font-family: 'Comfortaa';
+
+}
+
+/* Begin Debugging Code */
+/* header,
+main,
+main section,
+nav,
+.logo {
+    border: solid 2px #CCC;
+    /* padding: 10px;
+    margin: 10px; */
+/* }
+
+.logo {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+aside,
+body>header,
+main,
+.news-feed {
+    border: solid 2px #000; */
+    /* padding: 10px;
+    margin: 10px; */
+    /* font-family: monospace;
+} */
+
+/* End Debugging Code */
+
+
+
+/* Nav Bar */
+.top-nav {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Old code for nav bar */
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+}
+
+li {
+  list-style: none;
+  padding: 10px 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #275E8A;
+  padding: 5px;
+}
+
+/* Side Bar */
+.suggestions-panel {
+    position: fixed;
+    top: 100px;
+    left: 65vw;
+    min-height: 80vh;
+    width: calc(35vw - 30px);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar-user img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.suggestion-container {
+  font-family: Arial;
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  align-items: center;
+}
+
+.suggestion-container > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.suggestion-text > h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px;
+}
+.suggestion-text > p {
+  font-size: 1em;
+  color: #535353;
+  margin: 10px;
+}
+
+
+/* Main */
+main {
+    width: calc(60vw - 30px);
+    margin-top: 23px;
+    margin-left: 5vw;;
+}
+
+.post {
+  background-color: #fff;
+    min-height: 300px;
+    border: solid 1px  #9c9c9d71;
+    margin-bottom: 50px;
+}
+
+/* Kati's Section (post's info/comment section) */
+.post-text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    padding-bottom: 0px;
+    border-bottom:solid 2px #9c9c9d71;
+}
+
+.icons-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.icons-bar > div {
+    display: flex;
+    gap: 10px;
+}
+
+.likes {
+    padding-top: 15px;
+    padding-bottom: 7px;
+}
+
+.post-text p {
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.post-text strong {
+    font-weight: 700;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comments-section > a {
+    padding-left: 0px;
+}
+
+.timestamp {
+    font-size: .8em;
+    color: #4a4b4d;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.post-image {
+  width: 100%;
+  height: auto; 
+}
+
+.add-comment {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  padding: 20px;
+}
+
+.add-comment > a {
+  grid-column: 2;
+  text-align: end;
+}
+.comment-input > input {
+  gap: 20px;
+  width: 95%;
+  grid-column: 1;
+  border: none;
+}
+
+.fa-face-smile {
+  padding-right: 5px;
+}
+
+/* Stories */
+
+.stories {
+    display: flex;
+    background-color: #fff;
+    min-height: 100px;
+    /* border: solid 1px black; */
+    margin-bottom: 50px;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.story > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 3px #a3a3a3
+}
+
+.story > p {
+  margin: 0;
+  font-size: .8em;
+  text-align: center;
+  color: #535353;
+}
+
+.story {
+  max-height: 100px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+
+  /* I think that the following things need to be added */
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+@media (max-width: 800px) {
+
+    .suggestions-panel {
+        display: none;
+    }
+
+    main {
+        width: auto;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+}
