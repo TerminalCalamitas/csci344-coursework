@@ -19,6 +19,7 @@
         <li><a href="#topic1">How do LLM's work?</a></li>
         <li><a href="#topic2">Applications for AI in Education</a></li>
         <li><a href="#topic3">How does AI copyright work?</a></li>
+        <li><a href="#topic4">Fine Tuning a LLM</a></li>
       </ul>
     </section>
 
@@ -70,6 +71,19 @@ relationship between students and AI.</b>
         <br>To determine if the user can have the copyright we have to determine that OpenAI and Deepseek actually have the rights to the content created by the AI in order for them to give it away. In the case of <i>Naruto v. David Slater et al</i> it was determined that even though David Slater set everything up for a monkey to take a picture of itself, because the monkey took the picture, the monkey owned the copyright rather than David Slater. This means that even though you set everything up for the AI to create something, you do not own the copyright, the AI does. In the same case it was determined that since the owner of the copyright was a monkey and not human, it actually couldn't own the copyright. This means that the copyright of the image is in a weird place where <b>no one actually owns the copyright of the image</b>.
         <br>This is a very important case when it comes to AI because it means that since the AI did the work to create the content the model owns the rights to the content, however, since the model isn't a human, it can't own the copyright. This means that even though AI companies are giving you "the rights" to the produced content, they aren't giving you anything since those rights <b>don't actually exist.</b>
         <br>While it's not really a problem in most scenarios, if you use AI in the writing of code for your job, that code is in a weird legal place where you don't own the code so other people can take the code and use it without any repercussions since it isn't copywritten.
+      </p>
+    </section>
+
+    <section class="topic" id="topic4">
+      <h2><b>Fine Tuning a LLM</b></h2>
+      <p>
+        When using an LLM for a specific purpose it can be more desireable to have the LLM respond in a given style without having to spend a lot of time developing a system prompt that gives the desired response style. 
+        One way to get such a specific response style is to fine tune the LLM on a dataset that has the desired response style.
+        <br>To fine tune an LLM you need a few things, 1. A dataset that has many examples of the desired response style, 2. A base LLM that you can fine tune, and 3. A computer powerful enough to run the fine tuning process.
+        I decided to fine tune an LLM off of my own messages to see if I could get the LLM to respond in a similar manner to how I do. For the dataset I used 25 various examples of conversations I had with people. For the base LLM I used Deepseek v3 1.7B distill since it was the only LLM that my computer could fine tune consistently. Finally, for my computer I used my laptop which has an intel 15-1340P cpu, 32GB of ram, and an external Nvidia 3050 GPU with 8GB of VRAM.
+        <br>To fine tune (I used LLaMA Factory for all the training steps) the model, the first step is to train a LoRA which is kind of like a mask that you can apply to a model to make it respond in a certain manner. To train the LoRA I formatted all of my example conversations into the sharegpt file format then ran the training process. After the LoRA was trained I applied it to the base model and then used the LLaMA Factory export feature to make a new .safetensors file that I could then load to talk to my fine tuned model. If I wanted to use the model in LM studio I would have to convert the .safetensors file into a .GGUF file but since I wasn't thrilled with the results I didn't do that.
+        <br>I ran the fine tuning process for 1000 steps which took about an hour to process. While the fine tuned model works to generate answers, the limited size of the model (being only 1.7B parameters) means that the model is actually really dumb and doesn't give good responses very often.
+        <br>While my model is really dumb I'm hoping to get a more powerful GPU so that I can fine-tune a better model as the process for fine tuneing was really fun. In addition to a better GPU I also plan to look through more of my sent messages to find more examples of my conversational style since more data tends to make better LLMs.
       </p>
     </section>
 
