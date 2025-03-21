@@ -161,7 +161,7 @@ function renderLikeButton(postJSON) {
   if (postJSON.current_user_like_id) {
     template = `
       <button aria-label="remove like from post" onclick="window.removeLike(${postJSON.current_user_like_id})">
-          <i class="text-blue-500 fas fa-heart"></i>
+          <i class="text-red-600 fas fa-heart"></i>
       </button>`;
     
   } else {
