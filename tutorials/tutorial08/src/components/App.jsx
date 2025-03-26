@@ -93,16 +93,16 @@ export default function App() {
           </h2>
           <Carousel afterChange={onChange} autoplay={{dotDuration:true}} autoplaySpeed={2500}>
             <div>
-              <h3 style={contentStyle}>1</h3>
+              <h3 style={contentStyle}>First slide</h3>
             </div>
             <div>
-              <h3 style={contentStyle}>2</h3>
+              <h3 style={contentStyle}>Second Slide</h3>
             </div>
             <div>
-              <h3 style={contentStyle}>3</h3>
+              <h3 style={contentStyle}>3rd slide</h3>
             </div>
             <div>
-              <h3 style={contentStyle}>4</h3>
+              <h3 style={contentStyle}>fourth slide</h3>
             </div>
           </Carousel>
         </div>
