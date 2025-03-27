@@ -12,7 +12,7 @@ export async function getAccessToken(rootURL, username, password) {
         "username": username,
         "password": password
     };
-    const endpoint = `${rootURL}/api/token/`;
+    const endpoint = `${rootURL}/api/token/`;   //go out to the server address (where it would give us a token)
     const response = await fetch(endpoint, {
         method: "POST",
         headers: {
