@@ -104,3 +104,23 @@ const statuses = [
  *   4. create a function that returns the total number of retweets 
  *      (across all of the statuses in the list) (use reduce).
  */
+
+// 1
+function getImageUrls(statuses) {
+  const image_urls = statuses.map(status => status.image_url).filter(url => url !== undefined);
+  return image_urls;
+}
+
+// 2
+function getScreenNames500(statuses) {
+  const screen_names = statuses.filter(status => status.retweet_count >= 500).map(status => status.screen_name)
+  return screen_names;
+  
+}
+
+
+let urls = getImageUrls(statuses);
+console.log(urls);
+
+let names = getScreenNames500(statuses);
+console.log(names);
