@@ -35,6 +35,8 @@ posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10]
 def print_user_dict(users):
     for user in users:
         print(user.to_dict())
+
+print("\n===========Exercise 1===========")
 print_user_dict(users)
 # 2. Returns a list of usernames (list of string)
 def get_usernames(users):
@@ -45,22 +47,78 @@ def get_usernames(users):
     #return usernames
     return [user.username for user in users]
 
+print("\n===========Exercise 2===========")
 print(get_usernames(users))
 
 # 3. Returns a list of active users (list of User objects)
+def get_active_users(users):
+    active_users = []
+    for user in users:
+        if (user.is_active):
+            active_users.append(user)
+
+    return active_users
+
+print("\n===========Exercise 3===========")
+print(get_active_users(users))
 
 # 4. Prints a dictionary representation of the first 3 users
+def dict_first_three_users(users):
+    for user in range(3):
+        print(users[user].to_dict())
+
+print("\n===========Exercise 4===========")
+dict_first_three_users(users)
 
 # 5. Returns a list of image_urls of the posts (list of strings)
+def get_post_images(posts):
+    return [post.image_url for post in posts]
 
+print("\n===========Exercise 5===========")
+print(get_post_images(posts))
 
 ################################
 # In-Class Challenges (posts): #
 ################################
 # For each of the tasks below, write a function that performs the requested operation:
 # 1. Prints a dictionary representation of each post to the console.
+print("================================")
+print("=        Post Challenges       =")
+print("================================")
+def print_post_dict(posts):
+    for post in posts:
+        print(post.to_dict())
+
+print("\n===========Exercise 1===========")
+print_post_dict(posts)
 # 2. Returns a list of posts' image_urls (list of strings)
+def get_post_images(posts):
+    return [post.image_url for post in posts]
+
+print("\n===========Exercise 2===========")
+print(get_post_images(posts))
 # 3. Returns a distinct list of posts' authors (list of User objects)
+def get_distinct_post_authors(posts):
+    distinct_users = []
+    for post in posts:
+        if post.user not in distinct_users:
+            distinct_users.append(post.user)
+    return distinct_users
+
+
+print("\n===========Exercise 3===========")
+print(get_distinct_post_authors(posts))
+
 # 4. Returns all of the post objects that belong to a given user (e.g., user3)  (list of Post objects)
+def get_all_user_posts(posts, user):
+    user_posts = []
+    for post in posts:
+        if post.user == user:
+            user_posts.append(post)
+    return user_posts
+
+
+print("\n===========Exercise 4===========")
+print(get_all_user_posts(posts, user3))
 
 
