@@ -5,9 +5,11 @@ import { getDataFromServer } from "../server-requests.jsx";
 export default function Stories({ token }) {
   const [stories, setStories] = useState([]);
 
-  getDataFromServer(token, "/api/stories/").then((data) => {
-    setStories(data);
-  });
+  useEffect(() => {
+    getDataFromServer(token, "/api/stories/").then((data) => {
+      setStories(data);
+    });
+  }, []);
 
   return (
     <header className="flex gap-6 bg-white border p-2 overflow-hidden mb-6">

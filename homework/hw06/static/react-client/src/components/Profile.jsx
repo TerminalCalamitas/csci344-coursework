@@ -6,13 +6,15 @@ export default function Profile({ token }) {
   const [username, setUsername] = useState("username");
   const [userPicture, setUserPicture] = useState([]);
 
-  getDataFromServer(
-    token,
-    "https://photo-app-secured.herokuapp.com/api/profile/",
+  useEffect(() => {
+    getDataFromServer(
+      token,
+      "/api/profile/",
   ).then((userData) => {
-    setUsername(userData.username);
-    setUserPicture(userData.thumb_url);
-  });
+      setUsername(userData.username);
+      setUserPicture(userData.thumb_url);
+    });
+  }, []);
 
   return (
     <header className="flex gap-4 items-center">

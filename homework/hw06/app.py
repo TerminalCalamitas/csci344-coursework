@@ -50,7 +50,7 @@ initialize_routes(api, flask_jwt_extended.current_user)
 
 
 # Route for serving static react files
-@app.route("/static/react-client/<path:filename>")
+@app.route("/<path:filename>")
 @decorators.jwt_or_login
 def custom_static(filename):
     try:
