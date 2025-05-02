@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { appendProxyUrl } from "./vite.plugins";
 
-const proxyUrl = "https://photo-app-secured.herokuapp.com/api";
+const proxyUrl = "/api";
 
 export default defineConfig({
     base: "",
